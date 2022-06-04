@@ -1,11 +1,17 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route 
+} from 'react-router-dom';
 import Homepage from './pages/Hompage';
 import Userpage from './pages/Userpage';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>

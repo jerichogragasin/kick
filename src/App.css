@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+:root {
+  --purple: #cdb4db;
+  --light-pink: #ffc8dd;
+  --pink: #ffafcc;
+  --light-blue: #bde0fe;
+  --blue: #a2d2ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbrand {
+  font-family: "Kaushan Script", cursive;
+  font-size: 40px !important;
+}
+
+.navlink:hover {
+  background-color: var(--light-blue);
+  transition: ease 0.9s;
+  font-weight: 400;
+}
+
+.title {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 60px;
+}
+
+.text {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-box {
+  background-color: var(--light-blue);
+}
+
+.footer {
+  background-color: var(--blue);
+  --bs-gutter-x: 0 !important;
+}
+
+.homepage-images {
+  height: 320px;
+  width: 320px;
+}
+
+.footer-links {
+  color: #000 !important;
+}
+.footer-links:hover {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: var(--light-pink);
 }
