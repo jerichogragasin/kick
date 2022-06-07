@@ -5,7 +5,6 @@ import Footer from "../components/Footer/Footer";
 const Homepage = () => {
     return (
         <div classname="app border border-primary">
-            <HomepageNavbar />
             <div className="homepage container">
                 <div className="my-4 d-block">
                     <h1 className="text-center title my-4 ">Welcome to Kick</h1>
