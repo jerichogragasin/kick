@@ -10,19 +10,25 @@ import Homepage from './pages/Hompage';
 import Userpage from './pages/Userpage';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import HomepageNavbar from './components/Navbars/HomepageNavbar';
+
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />}>
-          <Route index element={<Homepage />} />
-        </Route>
-        <Route path="/home" element={<Userpage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </Router>
+    <div>
+      <HomepageNavbar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />}>
+            <Route index element={<Homepage />} />
+          </Route>
+          <Route path="/home" element={<Userpage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
+    </div>
+    
   );
 }
 
