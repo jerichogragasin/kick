@@ -56,3 +56,15 @@ html {
   color: white;
   background-color: var(--light-pink);
 }
+
+/* -------------Form Styling---------------------- */
+
+.formContainer {
+  font-family: 'Poppins', sans-serif;
+}
+
+.primaryButton {
+  background-color: var(--blue) !important;
+  border: none !important;
+  color: black !important;
+}
