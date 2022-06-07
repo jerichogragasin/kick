@@ -11,7 +11,7 @@ const HomepageNavbar = () => {
             <Navbar bg="light" expand="lg" className="navbar">
                 <Container>
                     <Navbar.Brand href="/" className="navbrand">Kick</Navbar.Brand>
-                    <Nav classname="justify-content-end">
+                    <Nav className="justify-content-end">
                         <Nav.Link className="navlink rounded-2" href="/">Home</Nav.Link>
                         <Nav.Link className="navlink rounded-2" href="/login">Login</Nav.Link>
                         <Nav.Link className="navlink rounded-2" href="/signup">Signup</Nav.Link>
