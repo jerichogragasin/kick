@@ -1,10 +1,12 @@
-import HomepageNavbar from "../components/Navbars/HomepageNavbar";
+
 import Image from "react-bootstrap/Image";
 import Footer from "../components/Footer/Footer";
+import HomepageNavbar from "../components/Navbars/HomepageNavbar";
 
-const Homepage = () => {
+const Index = () => {
     return (
-        <div classname="app border border-primary">
+        <div className="app">
+            <HomepageNavbar />
             <div className="homepage container">
                 <div className="my-4 d-block">
                     <h1 className="text-center title my-4 ">Welcome to Kick</h1>
@@ -52,4 +54,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage;
+export default Index;

@@ -1,26 +1,36 @@
-import React, { useEffect }  from "react";
 import {
     useState,
 } from 'react';
+
+import {
+    useNavigate
+} from 'react-router-dom'
+
 import {
     Button,
     Form, 
     Alert
-} from 'react-bootstrap'
+} from 'react-bootstrap';
+import HomepageNavbar from '../components/Navbars/HomepageNavbar';
+
+const credential = {
+    email : "echo26@gmail.com",
+    password: "echo"
+}
 
 
-const Login = () => {
+const Login = ({isLoggedIn, setIsLoggedIn}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isChecked, setIsChecked] = useState(false);
+    const navigate = useNavigate();
 
     const initialState = {
         emailErrMsg : "",
-        passwordErrMsg : ""
+        passwordErrMsg : "",
     }
 
     const [errMsg, setErrMsg] = useState(initialState);
-    // Parsing Object to make it accessible in the browser;
     const errors = JSON.parse(JSON.stringify(errMsg));
 
     const validateForm = (email, password) => {
@@ -42,10 +52,28 @@ const Login = () => {
     const loginHandler = (event) => {
         event.preventDefault();
         validateForm(email, password);
+        if(errors.emailErrMsg !== "" && errors.passwordErrMsg !== ""){
+            return;
+        }   
+
+        if(email === credential.email && password === credential.password){
+            console.log('Credentials are matched');
+            setIsLoggedIn(true);
+            return navigate('/home');
+        } else {
+            console.log("Credentials didn't match");
+            return setErrMsg({
+                emailErrMsg : "Email or Password is incorrect.",
+                passwordErrMsg : "Email or Password is incorrect."
+            });
+        }
     }
 
     return (
-        <Form className="w-50 mx-auto my-5 shadow-lg p-5 rounded-3 formContainer" onSubmit={loginHandler}>
+        <>
+            <HomepageNavbar />
+            <Form className="w-50 mx-auto my-5 shadow-lg p-5 rounded-3 formContainer" onSubmit={loginHandler}>
+            <h1 className="text-center">Login</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 {
@@ -78,12 +106,13 @@ const Login = () => {
                     type="checkbox" 
                     label="Keep me logged in." 
                     checked={isChecked}
-                    onChange={(e)=> setIsChecked(!isChecked)}/>
+                    onChange={(e)=> setIsChecked(!isChecked)}/> 
             </Form.Group>
-            <Button className="primaryButton" type="submit">
-                Submit
-            </Button>
-        </Form>
+                <Button className="primaryButton" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </>
     )
 }
 
